@@ -1,20 +1,20 @@
 // Only change code below this line
-
-    function multiplyArrayFunction(myArray) {
-        var product = 1;
-        var sum = 0;
-        for (var i=0; i < myArray.length; i++){
-            for (var j=0; j < myArray[i].length; j++){
-                product *= myArray[i][j];
-                sum += myArray[i][j];
-            }
-        }
-        return [product, sum];
-    }
+  function largestNumFromArr(arr) {
+      var maxNumArray = [];
+      for (var i = 0; i <arr.length; i++) {
+          var max = 0;
+          for (var j=0; j < arr[i].length; j++) {
+              if (arr[i][j] > max) {
+                  max = arr[i][j];
+              }
+          }
+          maxNumArray.push(max);
+      }
+      return maxNumArray;
+  }
 // Only change code above this line
+console.log(largestNumFromArr([13, 27, 18, 26], [4, 5, 1, 3], [32, 35, 37, 39], [1000, 1001, 857, 1])); // Change this line
+console.log(largestNumFromArr([4, 9, 1, 3], [13, 35, 18, 26], [32, 35, 37, 39], [1000, 1001, 857,1]));
+console.log(largestNumFromArr([17, 23, 25, 12], [25, 7, 34, 48], [4, 10, 18, 21], [72, 3, 17, 10]));
 
-
-console.log(multiplyArrayFunction([[2], [5, 6, 7], [8, 9]])); 
-console.log(multiplyArrayFunction([[2.5, 2], [0.5, 0.2], [8]])); 
-console.log(multiplyArrayFunction([[1,2], [3,4,5,6], [7,8,9]]));     // Change this line
-module.exports = multiplyArrayFunction;
+module.exports = largestNumFromArr;
